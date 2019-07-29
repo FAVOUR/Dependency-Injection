@@ -15,6 +15,7 @@ class Car {
 
       private var engine: Engine
 
+    //constructor injection tells dagger to inject this class
     @Inject
     constructor(wheels: Wheels, engine: Engine) {
         this.wheels = wheels

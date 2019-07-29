@@ -12,10 +12,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Call the auto generated DaggerCarComponent class  (Dagger as prefix) that extends  CarComponent interface
         var component:CarComponent = DaggerCarComponent.create()
 
+        //Call the overridden getcar() method implemented by the DaggerCarComponent class which returns the Instantiated  car method
         car = component.getCar()
 
+        //Call the drive method kin the car class
         car.drive()
 
     }
