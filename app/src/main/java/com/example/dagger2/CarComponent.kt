@@ -12,5 +12,5 @@ import dagger.Component
 interface CarComponent {
 
     //This method is meant to instantiate the car method after the  Dagger class has has implemented the interface
-    fun getCar():Car
+    fun inject(mainActivity: MainActivity)
 }
