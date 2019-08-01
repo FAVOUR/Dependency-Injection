@@ -30,7 +30,7 @@ class Car {
     // constructor injection else you may have to do the field injection as was done in the MainActivity
 
 
-    private var _engine: Engine
+//    private var _engine: Engine
 
     @Inject lateinit var engine: Engine
 
@@ -40,7 +40,7 @@ class Car {
 
         this.wheels = wheels
 
-        _engine = engine
+//        _engine = engine
 
     }
 
@@ -50,7 +50,7 @@ class Car {
     }
 
 
-    //This is considered when  we need to pass thr injected object to the dependency
+    //This is considered when  we need to pass the injected object to the dependency
     // eg passing the car class to the dependency remote class
     @Inject
     fun enableRemote(remote:Remote){
