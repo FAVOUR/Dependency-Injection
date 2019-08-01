@@ -50,7 +50,8 @@ class Car {
     }
 
 
-    //This is considered when  the instantiated class  needs to be used by another class
+    //This is considered when  we need to pass thr injected object to the dependency
+    // eg passing the car class to the dependency remote class
     @Inject
     fun enableRemote(remote:Remote){
 
