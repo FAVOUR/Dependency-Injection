@@ -16,12 +16,12 @@ class MainActivity : AppCompatActivity() {
         //Call the auto generated DaggerCarComponent class  (Dagger as prefix) that extends  CarComponent interface
         var component:CarComponent = DaggerCarComponent.create()
 
-//        /** Field injection is used in cases where the constructor is instantiated by the framework  (eg Activities and fragment in the android framework)
-//         * This is the heart of method injection the injected  method here requires the instantiated class as a parameter
-//         *  to the inject method for the car class to be instantiated and assigned to the  "car" field already declared
-//         *
-//         *  The injected method is manually called here because the instantiation is done by the framework other wise we do not need to do this
-//         */
+        /** Field injection is used in cases where the constructor is instantiated by the framework  (eg Activities and fragment in the android framework)
+         * This is the heart of method injection the injected  method here requires the instantiated class as a parameter
+         *  to the inject method for the car class to be instantiated and assigned to the  "car" field already declared
+         *
+         *  The injected method is manually called here because the instantiation is done by the framework other wise we do not need to do this
+         */
          component.inject(this)
 
         //Call the drive method in the car class
