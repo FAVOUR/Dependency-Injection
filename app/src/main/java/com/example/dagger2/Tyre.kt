@@ -13,6 +13,8 @@ class Tyre {
     fun inflateTyres(){
 
         Log.i("Car ", "Tyre Inflating.....")
+        Log.i("Car ", "Tyre Inflated.....")
+
     }
 
 }

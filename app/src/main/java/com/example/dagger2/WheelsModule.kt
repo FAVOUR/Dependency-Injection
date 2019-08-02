@@ -8,9 +8,13 @@ import dagger.Provides
  *Copyright (c) 2019  Itex Integrated Services  All rights reserved.
  */
 
+
+/* Annotates a class that contributes to the object graph.*/
   @Module
 class WheelsModule {
 
+    //Under the provider annotation you can conveniently instantiate/ do the setup of your module
+    // and return its assigned variable the method
     @Provides
     fun rimProvider():Rims{
       return  Rims()
@@ -18,12 +22,16 @@ class WheelsModule {
 
     @Provides
     fun tyreProvider():Tyre{
-        return  Tyre()
+
+        val tyre=Tyre()
+        tyre.inflateTyres()
+        return  tyre
     }
 
     @Provides
-    fun Wheels():Tyre{
-        return  Tyre()
+    fun wheels(rims: Rims,tyre: Tyre):Wheels{
+
+        return Wheels(rims, tyre)
     }
 
 
