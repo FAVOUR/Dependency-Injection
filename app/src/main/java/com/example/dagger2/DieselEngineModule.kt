@@ -11,6 +11,8 @@ import dagger.Provides
 
 //This Demonstrates how the bind method is implemented
 
+//Implement DieselEngineModule as an abstract class using binds annotation The provides method can be used but using a concrete class and a concrete method
+
 @Module
 abstract class DieselEngineModule {
 
