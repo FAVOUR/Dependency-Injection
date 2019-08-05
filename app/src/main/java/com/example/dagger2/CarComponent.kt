@@ -9,7 +9,7 @@ import dagger.Module
  */
 
 //This tells dagger to implement this method and the name of the concrete class will have Dagger as the prefix
-@Component(modules = [WheelsModule::class])
+@Component(modules = [WheelsModule::class,DieselEngineModule::class])
 interface CarComponent {
 
     //This method is meant to instantiate the car method after the  Dagger class has has implemented the interface

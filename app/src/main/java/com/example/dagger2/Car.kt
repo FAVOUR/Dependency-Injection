@@ -12,13 +12,17 @@ import javax.inject.Inject
 class Car {
 
       private  var wheels:Wheels
+      private  var engine:Engine
+
 
 
     //constructor injection tells dagger to inject this class
     @Inject
-    constructor(wheels: Wheels) {
+    constructor(wheels: Wheels,engine: Engine) {
 
         this.wheels = wheels
+        this.engine = engine
+
 
 
 
@@ -26,6 +30,7 @@ class Car {
 
 
     fun drive(){
+        engine.start()
     Log.d("Car Class ", "Driving....")
     }
 
