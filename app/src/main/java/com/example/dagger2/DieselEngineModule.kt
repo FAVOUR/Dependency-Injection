@@ -17,7 +17,13 @@ import dagger.Provides
 abstract class DieselEngineModule {
 
 
-    //This Demonstrates how the bind method is used with a method
+    /**This Demonstrates how the bind method is used with a method
+     Use @Bindes when you want to bind an implementation to an interface
+     Note that dagger never creates an implementation nor instance of the module for this method it just instantiates the class of the parameter directly
+     It is also important to note that you cannot add the provides annotation  with a method here because
+     it needs an instance of the module but dagger never creates it
+     you can use static provides method here
+    **/
     @Binds
     abstract fun bindsEngine(dieselEngine: DieselEngine):Engine
 
