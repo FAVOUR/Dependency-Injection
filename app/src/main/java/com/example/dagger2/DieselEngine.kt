@@ -11,6 +11,8 @@ import javax.inject.Inject
 
 class DieselEngine :Engine {
 
+      var horsePower:Int=0
+
     //constructor injection tells dagger to inject this class
     @Inject
     constructor()
