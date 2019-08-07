@@ -22,7 +22,7 @@ abstract class DieselEngineModule {
      Note that dagger never creates an implementation nor instance of the module for this method it just instantiates the class of the parameter directly
      It is also important to note that you cannot add the provides annotation  with a method here because
      it needs an instance of the module but dagger never creates it
-     you can use static provides method here  part 6 talks about when to use static
+     you can use static provides method here  part 6 and the latter part of  part 7 talks about when to use static
     **/
     @Binds
     abstract fun bindsEngine(dieselEngine: DieselEngine):Engine

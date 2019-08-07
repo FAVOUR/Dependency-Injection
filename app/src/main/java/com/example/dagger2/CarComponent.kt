@@ -9,9 +9,9 @@ import dagger.Module
  */
 
 /**This tells dagger to implement this method and the name of the concrete class will have Dagger as the prefix
- * note that you cannot add more than one class thet extends the Engine interface because dagger will be confused on which class to use
+ * note that you cannot add more than one class that extends the Engine interface because dagger will be confused on which class to use
 */
-@Component(modules = [WheelsModule::class,DieselEngineModule::class])
+@Component(modules = [WheelsModule::class,PetrolEngineModule::class])
 interface CarComponent {
 
     //This method is meant to instantiate the car method after the  Dagger class has has implemented the interface
