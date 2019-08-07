@@ -13,7 +13,7 @@ class DieselEngine :Engine {
 
       var horsePower:Int=0
 
-    //constructor injection tells dagger to inject this class
+    //constructor injection tells dagger to inject this
     @Inject
     constructor()
 
