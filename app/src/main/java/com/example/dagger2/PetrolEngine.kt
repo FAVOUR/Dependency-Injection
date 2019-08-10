@@ -1,6 +1,7 @@
 package com.example.dagger2
 
 import android.util.Log
+import javax.inject.Inject
 import kotlin.properties.Delegates
 
 /**
@@ -15,10 +16,11 @@ class PetrolEngine :Engine {
 
 
     /**
-     * The petrol engine is not having the inject annotator because a parameter has to be passed
-     * in at runtime hence it is we depend on the {@PetrolEngineModule} to pass the parameter through its
+     * The petrol engine now has  the inject annotator because a parameter has been provided by
+     * the {@providesHorsePower} method in the {@PetrolEngineModule} hence no need to pass the parameter through its
      * constructor
      * */
+    @Inject
     constructor(horsePower: Int) {
         this.horsePower = horsePower
     }

@@ -25,13 +25,29 @@ class PetrolEngineModule{
 
 
     /**
+     * I could also make  the horse power method to be in this module class and there by injecting the
+     * PetrolEngine as opposed to instantiation it it is also important to note that dagger cares about te
+     * return  type and not the name of the method hence it is right to say whenever  an integer is
+     * dagger checks the {@providesHorsePower} method when which is gonna be a challenge in the future incase
+     * you need have more integers But there is a more efficient  way to achieve the sane result checkout
+     * to the ............ branch
+     * */
+
+    @Provides
+    fun providesHorsePower():Int{
+        return horsePower
+    }
+
+
+
+    /**
      * By venture of this module having a constructor the {@providesPetrolEngine} method
      * is able to return the instantiated {@PetrolEngine} class
      */
     @Provides
-    fun providesPetrolEngine():Engine{
+    fun providesPetrolEngine(petrolEngine: PetrolEngine):Engine{
 
-        return PetrolEngine(horsePower)
+        return petrolEngine
 
     }
 }
