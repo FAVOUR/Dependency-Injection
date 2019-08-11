@@ -21,16 +21,7 @@ class MainActivity : AppCompatActivity() {
          *  Below is the implementation that shows how to inject state into your  module to get it into your dependency graph
          * */
 
-        var component:CarComponent = DaggerCarComponent.builder()
-                //Used when injecting value at runtime in the builder method
-                .horsePower(150)
-                .engineCapacity(200)
-
-                //Used when injecting value at runtime using module
-//                .petrolEngineModule(PetrolEngineModule(300))
-                //if I make wheels module static and the provides methods static then this class will be static
-//                .wheelsModule(WheelsModule())
-                .build()
+        var component:CarComponent =(application as App).getCarComponent()
 
 
         /** Field injection is used in cases where the constructor is instantiated by the framework  (eg Activities and fragment in the android framework)
