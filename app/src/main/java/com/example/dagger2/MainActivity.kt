@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
          */
          component.inject(this)
 
+//        Creating Singleton with scope in mind
         //Call the drive method in the car class
         car.drive()
         car1.drive()
