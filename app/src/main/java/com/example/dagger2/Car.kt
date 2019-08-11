@@ -13,15 +13,17 @@ class Car {
 
       private  var wheels:Wheels
       private  var engine:Engine
+      private  var driver:Driver
 
 
 
     //constructor injection tells dagger to inject this class
     @Inject
-    constructor(wheels: Wheels,engine: Engine) {
+    constructor(wheels: Wheels,engine: Engine,driver: Driver) {
 
         this.wheels = wheels
         this.engine = engine
+        this.driver = driver
 
 
 
@@ -32,6 +34,8 @@ class Car {
     fun drive(){
         engine.start()
     Log.d("Car Class ", "Driving....")
+    Log.d("Car Class ", "Driver .... $driver  driving  $this" )
+
     }
 
 

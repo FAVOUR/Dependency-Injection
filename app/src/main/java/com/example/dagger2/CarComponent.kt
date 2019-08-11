@@ -5,6 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
 import javax.inject.Named
+import javax.inject.Singleton
 
 /**
  * Created by Olije Favour on 7/16/2019.
@@ -14,6 +15,8 @@ import javax.inject.Named
 /**This tells dagger to implement this method and the name of the concrete class will have Dagger as the prefix
  * note that you cannot add more than one class that extends the Engine interface because dagger will be confused on which class to use
 */
+
+@Singleton
 @Component(modules = [WheelsModule::class,DieselEngineModule::class])
 interface CarComponent {
 

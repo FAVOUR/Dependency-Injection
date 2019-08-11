@@ -8,6 +8,8 @@ class MainActivity : AppCompatActivity() {
 
      //This method is left public for the purpose of it been referenced and  assigned the instantiated car class
      @Inject lateinit var car:Car
+     @Inject lateinit var car1:Car
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         //Call the drive method in the car class
         car.drive()
+        car1.drive()
 
 
     }
