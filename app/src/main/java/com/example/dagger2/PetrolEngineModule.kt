@@ -29,8 +29,8 @@ class PetrolEngineModule{
      * PetrolEngine as opposed to instantiation it it is also important to note that dagger cares about te
      * return  type and not the name of the method hence it is right to say whenever  an integer is
      * dagger checks the {@providesHorsePower} method when which is gonna be a challenge in the future incase
-     * you need have more integers But there is a more efficient  way to achieve the sane result checkout
-     * to the ............ branch
+     * you need have more integers But there is a more efficient  way to achieve the sane result check the
+     * {@DieselEngine} Class and the {@CarComponent}
      * */
 
     @Provides

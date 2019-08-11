@@ -20,7 +20,12 @@ class MainActivity : AppCompatActivity() {
          * */
 
         var component:CarComponent = DaggerCarComponent.builder()
-                .petrolEngineModule(PetrolEngineModule(300))
+                //Used when injecting value at runtime in the builder method
+                .horsePower(150)
+                .engineCapacity(200)
+
+                //Used when injecting value at runtime using module
+//                .petrolEngineModule(PetrolEngineModule(300))
                 //if I make wheels module static and the provides methods static then this class will be static
 //                .wheelsModule(WheelsModule())
                 .build()
