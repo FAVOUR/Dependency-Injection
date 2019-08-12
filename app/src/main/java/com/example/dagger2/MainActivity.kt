@@ -15,13 +15,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /**Call the auto generated DaggerCarComponent class  (Dagger as prefix) that extends  CarComponent interface
+        /**Call the auto generated DaggerCarComponent class  (Dagger as prefix) that extends  ActivityComponent interface
          *  it is also important to note that the create method is used when non of the modules in your component takes value(Parameter) over the constructor
          *  other wise you will require a builder method
          *  Below is the implementation that shows how to inject state into your  module to get it into your dependency graph
          * */
 
-        var component:CarComponent =(application as App).getCarComponent()
+        var component:ActivityComponent =  DaggerActivityComponent.builder()
+                .engineCapacity(150)
+                .horsePower(140)
+                .appComponent(  (application as App).getAppComponent())
+                .build()
 
 
         /** Field injection is used in cases where the constructor is instantiated by the framework  (eg Activities and fragment in the android framework)
@@ -32,7 +36,7 @@ class MainActivity : AppCompatActivity() {
          */
          component.inject(this)
 
-//        Creating Singleton with scope in mind
+
         //Call the drive method in the car class
         car.drive()
         car1.drive()

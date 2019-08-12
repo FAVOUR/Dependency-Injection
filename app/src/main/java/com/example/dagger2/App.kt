@@ -10,32 +10,34 @@ import android.app.Application
 
   class App: Application() {
 
-    private lateinit var _carComponent: CarComponent
+    private lateinit var appComponents: AppComponents
 
         override fun onCreate() {
             super.onCreate()
         /**
          * Considering an App Lifecycle in relation to singleton which preserves an instance of an
          * object once created we will need to consider extending the application class and making the
-         * instantiation of the {@CarComponent} Class form here
+         * instantiation of the {@ActivityComponent} Class form here
          * */
 
-        _carComponent = DaggerCarComponent.builder()
-                //Used when injecting value at runtime in the builder method
-                .horsePower(150)
-                .engineCapacity(200)
+            appComponents =DaggerAppComponents.create()
 
-                //Used when injecting value at runtime using module
-//                .petrolEngineModule(PetrolEngineModule(300))
-                //if I make wheels module static and the provides methods static then this class will be static
-//                .wheelsModule(WheelsModule())
-                .build()
+//            driverComponent = DaggerDriverComponent.create()
+//                //Used when injecting value at runtime in the builder method
+//                .horsePower(150)
+//                .engineCapacity(200)
+//
+//                //Used when injecting value at runtime using module
+////                .petrolEngineModule(PetrolEngineModule(300))
+//                //if I make wheels module static and the provides methods static then this class will be static
+////                .wheelsModule(WheelsModule())
+//                .build()
     }
 
 
-
-    fun getCarComponent():CarComponent{
-       return  _carComponent
+//
+     fun getAppComponent():AppComponents{
+       return  appComponents
     }
 
 }

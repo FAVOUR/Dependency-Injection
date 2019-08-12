@@ -6,7 +6,7 @@ import kotlin.properties.Delegates
 
 /**
  * Created by Olije Favour on 8/7/2019.
- * Copyright (c) 2019
+ * Copyright (c) 2019.
  */
 
 @Module
@@ -30,7 +30,7 @@ class PetrolEngineModule{
      * return  type and not the name of the method hence it is right to say whenever  an integer is
      * dagger checks the {@providesHorsePower} method when which is gonna be a challenge in the future incase
      * you need have more integers But there is a more efficient  way to achieve the sane result check the
-     * {@DieselEngine} Class and the {@CarComponent}
+     * {@DieselEngine} Class and the {@ActivityComponent}
      * */
 
     @Provides

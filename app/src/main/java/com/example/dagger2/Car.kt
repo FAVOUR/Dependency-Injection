@@ -2,13 +2,14 @@ package com.example.dagger2
 
 import android.util.Log
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Created by Olije Favour on 7/16/2019.
- *Copyright (c) 2019  Itex Integrated Services  All rights reserved.
+ *Copyright (c) 2019.
  */
 
-
+@PerActivity
 class Car {
 
       private  var wheels:Wheels

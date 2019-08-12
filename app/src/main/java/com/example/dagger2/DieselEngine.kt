@@ -15,7 +15,7 @@ class DieselEngine :Engine {
 
     /**
      * Horsepower variable will be supplied an runtime through the build method check the
-     * {@CarComponent method } and the {@MainActivity} Method */
+     * {@ActivityComponent method } and the {@MainActivity} Method */
    var horsePower by Delegates.notNull<Int>()
     var engineCapacity by Delegates.notNull<Int>()
 
