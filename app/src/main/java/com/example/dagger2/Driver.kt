@@ -10,5 +10,5 @@ import javax.inject.Inject
 
 class Driver{
 
-    //We cannot add the @Inject method because we do not have permission to this class
+    //We cannot add the @Inject method because we do not have access to this class
 }

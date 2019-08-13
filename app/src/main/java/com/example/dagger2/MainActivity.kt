@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         /**Call the auto generated DaggerCarComponent class  (Dagger as prefix) that extends  ActivityComponent interface
          *  it is also important to note that the create method is used when non of the modules in your component takes value(Parameter) over the constructor
-         *  other wise you will require a builder method
+         *  other wise you will require a builder method which will enable you put values at runtime
          *  Below is the implementation that shows how to inject state into your  module to get it into your dependency graph
          * */
 

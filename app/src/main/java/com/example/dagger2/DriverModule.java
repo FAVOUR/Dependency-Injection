@@ -15,6 +15,8 @@ import dagger.Provides;
 @Module
 public abstract  class DriverModule {
 
+
+    //This method is used by dagger to instantiate the driver class
     @Provides
     @Singleton
     static  Driver getDriver(){
