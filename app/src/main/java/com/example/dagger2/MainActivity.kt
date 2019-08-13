@@ -6,9 +6,11 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-     //This method is left public for the purpose of it been referenced and  assigned the instantiated car class
-     @Inject lateinit var car:Car
-     @Inject lateinit var car1:Car
+    //This method is left public for the purpose of it been referenced and  assigned the instantiated car class
+    @Inject
+    lateinit var car: Car
+    @Inject
+    lateinit var car1: Car
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,11 +23,20 @@ class MainActivity : AppCompatActivity() {
          *  Below is the implementation that shows how to inject state into your  module to get it into your dependency graph
          * */
 
-        var component:ActivityComponent =  DaggerActivityComponent.builder()
-                .engineCapacity(150)
-                .horsePower(140)
-                .appComponent(  (application as App).getAppComponent())
-                .build()
+//        var component:ActivityComponent =  DaggerActivityComponent.builder()
+//                .engineCapacity(150)
+//                .horsePower(140)
+//                .appComponent(  (application as App).getAppComponent())
+//                .build()
+
+//
+        var component: ActivityComponent = (application as App).getAppComponent()
+                                           .getActivityComponent(PetrolEngineModule(120))
+
+//                .engineCapacity(150)
+//                .horsePower(140)
+//                .appComponent(  (application as App).getAppComponent())
+//                .build()
 
 
         /** Field injection is used in cases where the constructor is instantiated by the framework  (eg Activities and fragment in the android framework)
@@ -34,7 +45,7 @@ class MainActivity : AppCompatActivity() {
          *
          *  The injected method is manually called here because the instantiation is done by the framework other wise we do not need to do this
          */
-         component.inject(this)
+        component.inject(this)
 
 
         //Call the drive method in the car class
@@ -43,4 +54,5 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
 }

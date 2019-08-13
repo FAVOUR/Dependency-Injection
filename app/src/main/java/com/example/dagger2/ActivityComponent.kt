@@ -2,6 +2,7 @@ package com.example.dagger2
 
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Subcomponent
 import javax.inject.Named
 
 /**
@@ -14,31 +15,38 @@ import javax.inject.Named
 */
 //@Component(dependencies = [DriverComponent::class],modules = [WheelsModule::class,DieselEngineModule::class])
 
-//The first  annotation are here because they have been used by the modules
+/**The first  annotation  {@PerActivity} here because it  has  been used by the module
+ * by virtue of this ben a subcomponent it has it will be only t take just modules and no
+ * dependency in the component annotation */
 @PerActivity
-@Component( dependencies = [AppComponents::class], modules = [WheelsModule::class,DieselEngineModule::class])
+@Subcomponent(  modules = [WheelsModule::class,PetrolEngineModule::class])
 interface ActivityComponent {
 
+//    fun getCar():Car
+
     //This method is meant to instantiate the car method after the  Dagger class has has implemented the interface
-    fun inject(mainActivity: MainActivity)
+     fun inject(mainActivity: MainActivity)
 
+/**I no longer had use for the component builder because it is using a module that has
+   *the values injected in the constructor
+ */
 
-    @Component.Builder
-
-         interface Builder {
-
-            @BindsInstance
-            fun horsePower (@Named("horsePower")horsePower:Int):Builder
-
-           @BindsInstance
-            fun engineCapacity (@Named("engineCapacity")engineCapacity:Int):Builder
-
-
-            fun appComponent (driverComponent:AppComponents):Builder
-
-
-        fun build():ActivityComponent
-        }
+//    @Component.Builder
+//
+//         interface Builder {
+//
+//            @BindsInstance
+//            fun horsePower (@Named("horsePower")horsePower:Int):Builder
+//
+//           @BindsInstance
+//            fun engineCapacity (@Named("engineCapacity")engineCapacity:Int):Builder
+//
+//
+//            fun appComponent (driverComponent:AppComponents):Builder
+//
+//
+//        fun build():ActivityComponent
+//        }
 
 
 

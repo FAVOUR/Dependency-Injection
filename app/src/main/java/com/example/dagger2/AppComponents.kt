@@ -11,12 +11,20 @@ import dagger.Component
  */
 
 /**
- * This interface is the component class that for the deiver module abstract class */
+ * This interface is the component class that for the driver module abstract class */
 @Singleton
 @Component(modules = [DriverModule::class])
 interface AppComponents {
 
-    val driver: Driver
+    /**This is commented out because the sub-component will now bw able to access the driver method without
+      *exposing it explicitly
+     */
+//    val driver: Driver
+
+    /**
+     * Module was passed as a parameter when  it is  not abstract and have a default
+     * constructor */
+     fun getActivityComponent(petrolEngineModule: PetrolEngineModule):ActivityComponent
 
 
 }
