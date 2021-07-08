@@ -12,45 +12,35 @@ import javax.inject.Inject
 class Car {
 
       private  var wheels:Wheels
+      private  var engine:Engine
+      private  var driver:Driver
 
 
-
-
-//      private var engine: Engine
-//
-//    //constructor injection tells dagger to inject this class
-//    @Inject
-//    constructor(wheels: Wheels, engine: Engine) {
-//        this.wheels = wheels
-//        this.engine = engine
-//    }
-
-    //Note that where a constructor is instantiated the field constructor and method are instantiated
-    // correspondingly in that order but the field and method injection can only be done if we do the
-    // constructor injection else you may have to do the field injection as was done in the MainActivity
-
-
-    private var _engine: Engine
-
-    @Inject lateinit var engine: Engine
 
     //constructor injection tells dagger to inject this class
     @Inject
-    constructor(wheels: Wheels) {
+    constructor(wheels: Wheels,engine: Engine,driver: Driver) {
 
         this.wheels = wheels
+        this.engine = engine
+        this.driver = driver
 
-        _engine = engine
+
+
 
     }
 
 
     fun drive(){
+        engine.start()
     Log.d("Car Class ", "Driving....")
+    Log.d("Car Class ", "Driver .... $driver  driving  $this" )
+
     }
 
 
-    //This is considered when  the instantiated class  needs to be used by another class
+    //This is considered when  we need to pass the injected object to the dependency
+    // eg passing the car class to the dependency remote class
     @Inject
     fun enableRemote(remote:Remote){
 
