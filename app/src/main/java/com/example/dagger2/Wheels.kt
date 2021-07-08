@@ -10,7 +10,9 @@ import javax.inject.Inject
 
 class Wheels {
 
-    //constructor injection for Wheel Class  tells dagger to inject this class
-    @Inject
-    constructor()
+    //In this senerio we assume the wheels class alongside rims and tyre class are all from some kind of module
+    // we added  to our project hence we cant us e the inject annotation
+    constructor(rims: Rims, tyre: Tyre){
+
+    }
 }

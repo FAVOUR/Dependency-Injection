@@ -18,6 +18,7 @@ public class Remote {
 
     }
 
+    //Here Car class serves as the dependency
     public void setListiner(Car car){
 
         Log.d(TAG, "control: Remote Connected..... ");
